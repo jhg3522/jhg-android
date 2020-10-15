@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "89335267769",
+    "firebase_url": "https://kmu-mobile.firebaseio.com",
+    "project_id": "kmu-mobile",
+    "storage_bucket": "kmu-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89335267769:android:d7186c6631778611433668",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89335267769-fnhr12htouf6fojsr6kdj4gp2drom57f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKBikIoXzdIMWmMviW7mIx2gJKEKuEwv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89335267769-fnhr12htouf6fojsr6kdj4gp2drom57f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
