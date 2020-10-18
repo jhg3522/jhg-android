@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cart);
 
         ArrayList<Product> item = new ArrayList<>();
         item.add(new Product("","패딩","1000","M"));
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         MyAdapter adapter = new MyAdapter(item);
 
-        GridView listView = findViewById(R.id.main_ListView);
+        GridView listView = findViewById(R.id.cart_ListView);
         listView.setAdapter(adapter);
     }
 }
