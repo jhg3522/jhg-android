@@ -1,33 +1,67 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private ArrayList<Product> arrayList;
+    private MyAdapter myAdapter;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Product> item = new ArrayList<>();
-        item.add(new Product("","패딩","1000","M"));
-        item.add(new Product("","옷","10000","L"));
-        item.add(new Product("","긴팔","7000","M"));
-        item.add(new Product("","옷","50000","L"));
-        item.add(new Product("","반팔","2000","M"));
-        item.add(new Product("","옷","10000","L"));
-        item.add(new Product("","바지","8000","L"));
+        GridView gridView = (GridView) findViewById(R.id.main_GridView);
+        Button cart_btn = (Button)findViewById(R.id.main_cart_btn);
+        arrayList = new ArrayList<>();
+        myAdapter = new MyAdapter(arrayList);
+        gridView.setAdapter(myAdapter);
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Item");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //데이터 받아오기
+                arrayList.clear(); //초기화
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    Product item = snapshot.getValue(Product.class);
+                    arrayList.add(item);
+                }
+                myAdapter.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("MainActivity",String.valueOf(error.toException()));
+            }
+        });
 
-        MyAdapter adapter = new MyAdapter(item);
+        cart_btn.setOnClickListener(this);
+    }
 
-        GridView listView = findViewById(R.id.main_ListView);
-        listView.setAdapter(adapter);
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, CartActivity.class);
+        startActivity(intent);
     }
 }
 

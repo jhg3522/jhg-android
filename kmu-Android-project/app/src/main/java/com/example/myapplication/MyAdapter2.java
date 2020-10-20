@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MyAdapter extends BaseAdapter {
+public class MyAdapter2 extends BaseAdapter {
     private List<Product> mItem;
 
-    public MyAdapter(List<Product> item) {
+    public MyAdapter2(List<Product> item) {
         this.mItem = item;
     }
 
@@ -37,7 +37,7 @@ public class MyAdapter extends BaseAdapter {
         if(convertView==null) {
             viewHolder= new ViewHolder();
             convertView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.list_product1, parent, false);
+                    .inflate(R.layout.list_product2, parent, false);
 
             ImageView productImg = convertView.findViewById(R.id.list_img);
             TextView productName = convertView.findViewById(R.id.list_name);
