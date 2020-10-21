@@ -34,6 +34,7 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {//한칸에 들어가는 layout 정의
         ViewHolder viewHolder;
+
         if(convertView==null) {
             viewHolder= new ViewHolder();
             convertView = LayoutInflater.from(parent.getContext())
@@ -68,6 +69,6 @@ public class MyAdapter extends BaseAdapter {
         TextView ProductName ;
         TextView ProductCost ;
         TextView ProductSize ;
-
     }
+
 }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -11,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:layout_gravity="top"
         android:background="#1233EC">
 
         <ImageButton
@@ -41,8 +40,77 @@
             android:textColor="#FFFFFF" />
     </RelativeLayout>
 
-    <listView
-        android:id="@+id/cart_ListView"
+    <ListView
+        android:id="@+id/buy_ListView"
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="350dp" />
+
+    <GridLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:columnCount="2"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:layout_columnSpan="2"
+            android:layout_height="20dp"
+            android:layout_width="match_parent"
+            android:text="배송 정보"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:text="성명"/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:importantForAutofill="no" />
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:text="주소"/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:text="연락처"/>
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            />
+        <TextView
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:text="총 금액"/>
+        <EditText
+            android:id="@+id/buy_all_cost"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <Button
+            android:id="@+id/buy_home_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Home"
+            android:layout_weight="0.5"/>
+
+        <Button
+            android:id="@+id/buy_buy_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:text="Buy" />
+    </LinearLayout>
 </LinearLayout>
