@@ -25,38 +25,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        final GridView gridView = findViewById(R.id.main_GridView);
+        Button cart_btn = findViewById(R.id.main_cart_btn);
+        Button buy_btn = findViewById(R.id.main_buy_btn);
         final ArrayList<Product> item = new ArrayList<>();
         final ArrayList<Product> trans_item = new ArrayList<>();
-        item.add(new Product("https://firebasestorage.googleapis.com/v0/b/kmu-mobile.appspot.com/o/clothes_01.jpeg","패딩","1000","M"));
+        MyAdapter adapter = new MyAdapter(item);
+        gridView.setAdapter(adapter);
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+        item.add(new Product("","패딩","1000","M"));
         item.add(new Product("","옷","10000","L"));
         item.add(new Product("","긴팔","7000","M"));
         item.add(new Product("","바지","8000","L"));
-        MyAdapter adapter = new MyAdapter(item);
-        final GridView gridView = findViewById(R.id.main_GridView);
-        gridView.setAdapter(adapter);
-        Button cart_btn = findViewById(R.id.main_cart_btn);
-        Button buy_btn = findViewById(R.id.main_buy_btn);
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        final DatabaseReference databaseReference = firebaseDatabase.getReference();
+
+
         buy_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(Product product :item){
-                    if(product.isCheck()){
+                for (Product product : item) {
+                    if (product.isCheck()) {
                         trans_item.add(product);
                     }
                 }
-                for(Product product : trans_item){
+                for (Product product : trans_item) {
                     String key = databaseReference.child("Buy").push().getKey();
-                    Map<String,Object> post = product.Product_Map();
-                    Map<String,Object> child = new HashMap<>();
-                    child.put("/Item/"+key,post);
+                    Map<String, Object> post = product.Product_Map();
+                    Map<String, Object> child = new HashMap<>();
+                    child.put("/Buy/" + key, post);
                     databaseReference.updateChildren(child);
                 }
-                Intent intent = new Intent(MainActivity.this,CartActivity.class);
-                startActivity(intent);
-                finish();
-
+                if(trans_item.isEmpty()){Toast.makeText(MainActivity.this,"선택된 상품이 없습니다.",Toast.LENGTH_SHORT).show();}
+                else {
+                    Intent intent = new Intent(MainActivity.this, BuyActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 

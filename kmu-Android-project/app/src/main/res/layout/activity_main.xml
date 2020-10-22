@@ -22,16 +22,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <ImageButton
-            android:id="@+id/main_trash_btn"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:src="@drawable/trash"
-            android:background="@android:color/transparent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,12 +50,12 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="장바구니"/>
+            android:text="@string/cart"/>
         <Button
             android:id="@+id/main_buy_btn"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="구매"/>
+            android:text="@string/buy"/>
     </LinearLayout>
 </RelativeLayout>

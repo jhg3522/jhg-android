@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Cart"
+            android:text="@string/cart"
             android:textSize="25sp"
             android:textColor="#FFFFFF" />
     </RelativeLayout>
@@ -59,12 +59,12 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="홈"/>
+            android:text="@string/home"/>
         <Button
             android:id="@+id/cart_buy_btn"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="구매"/>
+            android:text="@string/buy"/>
     </LinearLayout>
 </LinearLayout>

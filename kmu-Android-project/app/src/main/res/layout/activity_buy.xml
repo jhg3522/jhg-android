@@ -21,21 +21,12 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <ImageButton
-            style="@android:style/Widget.ImageButton"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:src="@drawable/common_google_signin_btn_icon_light"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Buy"
+            android:text="@string/buy"
             android:textSize="25sp"
             android:textColor="#FFFFFF" />
     </RelativeLayout>
@@ -44,7 +35,7 @@
         android:id="@+id/buy_ListView"
         android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="350dp" />
+        android:layout_height="320dp" />
 
     <GridLayout
         android:layout_gravity="bottom"
@@ -65,6 +56,7 @@
             android:layout_width="100dp"
             android:text="성명"/>
         <EditText
+            android:id="@+id/buy_edit_name"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:importantForAutofill="no" />
@@ -73,6 +65,7 @@
             android:layout_width="100dp"
             android:text="주소"/>
         <EditText
+            android:id="@+id/buy_edit_address"
             android:layout_width="300dp"
             android:layout_height="40dp" />
         <TextView
@@ -80,6 +73,7 @@
             android:layout_width="100dp"
             android:text="연락처"/>
         <EditText
+            android:id="@+id/buy_edit_phone"
             android:layout_width="300dp"
             android:layout_height="40dp"
             />
@@ -87,13 +81,12 @@
             android:layout_height="40dp"
             android:layout_width="100dp"
             android:text="총 금액"/>
-        <EditText
+        <TextView
             android:id="@+id/buy_all_cost"
             android:layout_width="300dp"
             android:layout_height="40dp"
             />
     </GridLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,7 +96,7 @@
             android:id="@+id/buy_home_btn"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Home"
+            android:text="@string/home"
             android:layout_weight="0.5"/>
 
         <Button
@@ -111,6 +104,6 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:text="Buy" />
+            android:text="@string/buy" />
     </LinearLayout>
 </LinearLayout>
