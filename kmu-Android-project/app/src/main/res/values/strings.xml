@@ -3,4 +3,7 @@
     <string name="home">HOME</string>
     <string name="cart">CART</string>
     <string name="buy">BUY</string>
+    <string name="상품명">상품명 :</string>
+    <string name="상품금액">상품 금액 :</string>
+    <string name="사이즈">사이즈 :</string>
 </resources>

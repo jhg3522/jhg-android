@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         final DatabaseReference databaseReference = firebaseDatabase.getReference();
 
-        item.add(new Product("","패딩","1000","M"));
-        item.add(new Product("","옷","10000","L"));
-        item.add(new Product("","긴팔","7000","M"));
-        item.add(new Product("","바지","8000","L"));
+        item.add(new Product("1","https://firebasestorage.googleapis.com/v0/b/kmu-mobile.appspot.com/o/clothes_03.jpeg?alt=media&token=39633375-8529-48f2-8459-22e0efcc874c","상의","15000","XL"));
+        item.add(new Product("2","https://firebasestorage.googleapis.com/v0/b/kmu-mobile.appspot.com/o/clothes_02.jpeg?alt=media&token=9aecba39-593c-4a4c-8a17-4b99fa683d9c","하의","20000","31"));
+        item.add(new Product("3","https://firebasestorage.googleapis.com/v0/b/kmu-mobile.appspot.com/o/cap_01.jpeg?alt=media&token=ad9904fe-efb1-4906-a1ac-28affe8f1c6a","모자","10000","M"));
+        item.add(new Product("4","https://firebasestorage.googleapis.com/v0/b/kmu-mobile.appspot.com/o/shoes.jpeg?alt=media&token=49994885-ee4f-403a-a164-0b8b42617755","신발","30000","300"));
 
 
         buy_btn.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, position+1 +"번째 아이템 선택", Toast.LENGTH_SHORT).show();
+                if(!item.get(position).isCheck())Toast.makeText(MainActivity.this, position+1 +"번째 아이템 선택", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(MainActivity.this, position+1 +"번째 아이템 선택 해제", Toast.LENGTH_SHORT).show();
                 boolean newState =!item.get(position).isCheck();
                 item.get(position).setCheck(newState);
                 System.out.println(newState);

@@ -7,12 +7,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class MyAdapter2 extends BaseAdapter {
-    private List<Product> mItem;
+    private ArrayList<Product> mItem;
 
-    public MyAdapter2(List<Product> item) {
+    public MyAdapter2(ArrayList<Product> item) {
         this.mItem = item;
     }
 
@@ -32,18 +32,19 @@ public class MyAdapter2 extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {//한칸에 들어가는 layout 정의
-        ViewHolder viewHolder;
+    public View getView(int position, View convertView, ViewGroup parent) {
+        MyAdapter2.ViewHolder viewHolder;
+
         if(convertView==null) {
-            viewHolder= new ViewHolder();
+            viewHolder= new MyAdapter2.ViewHolder();
             convertView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.list_product2, parent, false);
-
+            TextView ProductNum = convertView.findViewById(R.id.list_number);
             ImageView productImg = convertView.findViewById(R.id.list_img);
             TextView productName = convertView.findViewById(R.id.list_name);
             TextView productCost = convertView.findViewById(R.id.list_cost);
             TextView productSize = convertView.findViewById(R.id.list_size);
-
+            viewHolder.ProductNum = ProductNum;
             viewHolder.ProductImg = productImg;
             viewHolder.ProductName =productName;
             viewHolder.ProductCost = productCost;
@@ -52,10 +53,11 @@ public class MyAdapter2 extends BaseAdapter {
             convertView.setTag(viewHolder);
         }
         else{
-            viewHolder= (ViewHolder) convertView.getTag();
+            viewHolder= (MyAdapter2.ViewHolder) convertView.getTag();
         }
 
         Product product = mItem.get(position);
+        viewHolder.ProductNum.setText(product.getNum());
         viewHolder.ProductName.setText(product.getName());
         viewHolder.ProductCost.setText(product.getCost());
         viewHolder.ProductSize.setText(product.getSize());
@@ -64,10 +66,11 @@ public class MyAdapter2 extends BaseAdapter {
     }
 
     static class  ViewHolder{
+        TextView ProductNum;
         ImageView ProductImg ;
         TextView ProductName ;
         TextView ProductCost ;
         TextView ProductSize ;
-
     }
 }
+

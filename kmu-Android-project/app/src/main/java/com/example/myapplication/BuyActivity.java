@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,15 +29,41 @@ public class BuyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference().child("/Buy/");
+        final FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        final DatabaseReference databaseReference = firebaseDatabase.getReference().child("/Buy/");
         Button home_btn = findViewById(R.id.buy_home_btn);
+        Button buy_btn = findViewById(R.id.buy_buy_btn);
         final ArrayList<Product> item = new ArrayList<>();
+        final MyAdapter2 adapter = new MyAdapter2(item);
+        final ListView listView = findViewById(R.id.buy_ListView);
+        final TextView textView = findViewById(R.id.buy_all_cost);
+        final EditText editText1 = findViewById(R.id.buy_edit_address);
+        final EditText editText2 = findViewById(R.id.buy_edit_name);
+        final EditText editText3 = findViewById(R.id.buy_edit_phone);
 
+
+        buy_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(editText1.getText().toString().equals("") || editText2.getText().toString().equals("")
+                        || editText3.getText().toString().equals("")){
+                    Toast.makeText(BuyActivity.this,"배송 정보를 전부 입력해주세요",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    DatabaseReference databaseReference = firebaseDatabase.getReference();
+                    databaseReference.removeValue();
+                    Toast.makeText(BuyActivity.this, "상품 주문이 완료 되었습니다.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(BuyActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
 
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                databaseReference.removeValue();
                 Intent intent = new Intent(BuyActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -45,6 +73,7 @@ public class BuyActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                item.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Product product = dataSnapshot.getValue(Product.class);
                     item.add(product);
@@ -55,10 +84,7 @@ public class BuyActivity extends AppCompatActivity {
                     totalPrice += product_price;
                     Log.d("total", String.valueOf(totalPrice));
                 }
-                MyAdapter2 adapter = new MyAdapter2(item);
-                ListView listView = findViewById(R.id.buy_ListView);
                 listView.setAdapter(adapter);
-                TextView textView = findViewById(R.id.buy_all_cost);
                 textView.setText(String.valueOf(totalPrice));
             }
             @Override
@@ -67,6 +93,5 @@ public class BuyActivity extends AppCompatActivity {
             }
         };
         databaseReference.addValueEventListener(mValueEventListener);
-
     }
 }

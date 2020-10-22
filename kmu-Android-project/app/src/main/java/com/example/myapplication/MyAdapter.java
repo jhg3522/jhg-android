@@ -7,12 +7,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 
 public class MyAdapter extends BaseAdapter {
-    private List<Product> mItem;
+    private ArrayList<Product> mItem;
 
-    public MyAdapter(List<Product> item) {
+    public MyAdapter(ArrayList<Product> item) {
         this.mItem = item;
     }
 
@@ -32,7 +34,7 @@ public class MyAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {//한칸에 들어가는 layout 정의
+    public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 
         if(convertView==null) {
@@ -57,6 +59,7 @@ public class MyAdapter extends BaseAdapter {
         }
 
         Product product = mItem.get(position);
+        Glide.with(viewHolder.ProductImg).load(mItem.get(position).getImg()).into(viewHolder.ProductImg);
         viewHolder.ProductName.setText(product.getName());
         viewHolder.ProductCost.setText(product.getCost());
         viewHolder.ProductSize.setText(product.getSize());

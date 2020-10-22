@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Product implements Parcelable {
+    private String num;
     private String img_url;
     private String name;
     private String cost;
@@ -14,7 +15,9 @@ public class Product implements Parcelable {
     private boolean check = false;
 
     public Product(){}
-    public Product(String img, String name, String cost, String size) {
+
+    public Product(String num,String img, String name, String cost, String size) {
+        this.num = num;
         this.img_url = img;
         this.name = name;
         this.cost = cost;
@@ -22,6 +25,7 @@ public class Product implements Parcelable {
     }
 
     protected Product(Parcel in) {
+        num = in.readString();
         img_url = in.readString();
         name = in.readString();
         cost = in.readString();
@@ -97,6 +101,7 @@ public class Product implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(num);
         dest.writeString(img_url);
         dest.writeString(name);
         dest.writeString(cost);
@@ -106,10 +111,19 @@ public class Product implements Parcelable {
 
     public Map<String, Object> Product_Map(){
         Map<String, Object> map = new HashMap<>();
+        map.put("num",num);
         map.put("name",name);
         map.put("cost",cost);
         map.put("size",size);
         map.put("img_url",img_url);
         return map;
+    }
+
+    public String getNum() {
+        return num;
+    }
+
+    public void setNum(String num) {
+        this.num = num;
     }
 }
