@@ -8,7 +8,7 @@ Android Studio Java 언어 사용, Firebase Realtime Database, Storage 사용
 
 1. #### 상품 페이지
 
-   <img src="https://user-images.githubusercontent.com/50823103/97003129-f0308280-1575-11eb-8931-3a1cbdbf38ef.png" alt="image-20201023202144858" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97002661-4224d880-1575-11eb-92ea-26bf9caa61eb.png" alt="image-20201023202356352" style="zoom:67%;" />
+   <img src="https://user-images.githubusercontent.com/50823103/97003129-f0308280-1575-11eb-8931-3a1cbdbf38ef.png" alt="image-20201023202144858" style="zoom: 50%;" /><img src="https://user-images.githubusercontent.com/50823103/97002661-4224d880-1575-11eb-92ea-26bf9caa61eb.png" alt="image-20201023202356352" style="zoom: 50%;" />
 
 
 `상품 페이지는 Relative Layout으로 제작.`
@@ -27,9 +27,9 @@ Android Studio Java 언어 사용, Firebase Realtime Database, Storage 사용
 
 2. #### 장바구니 페이지
 
-   <img src="https://user-images.githubusercontent.com/50823103/97002662-4224d880-1575-11eb-860d-695bd60fbffd.png" alt="image-20201023203111902" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97002664-42bd6f00-1575-11eb-8de0-ef494fabe788.png" alt="image-20201023203202590" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97002668-42bd6f00-1575-11eb-8658-dc1c8cf8fbfb.png" alt="image-20201023203238233" style="zoom:67%;" />
+   <img src="https://user-images.githubusercontent.com/50823103/97002662-4224d880-1575-11eb-860d-695bd60fbffd.png" alt="image-20201023203111902" style="zoom: 50%;" /><img src="https://user-images.githubusercontent.com/50823103/97002664-42bd6f00-1575-11eb-8de0-ef494fabe788.png" alt="image-20201023203202590" style="zoom: 50%;" /><img src="https://user-images.githubusercontent.com/50823103/97002668-42bd6f00-1575-11eb-8658-dc1c8cf8fbfb.png" alt="image-20201023203238233" style="zoom: 50%;" />
 
-<img src="https://user-images.githubusercontent.com/50823103/97002670-43560580-1575-11eb-8ea7-fb0f87df01d2.png" alt="image-20201023204054332" style="zoom:67%;" />
+<img src="https://user-images.githubusercontent.com/50823103/97002670-43560580-1575-11eb-8ea7-fb0f87df01d2.png" alt="image-20201023204054332" style="zoom: 33%;" />
 
 `장바구니 페이지는 Linear Layout으로 제작.`
 
@@ -45,9 +45,9 @@ Android Studio Java 언어 사용, Firebase Realtime Database, Storage 사용
 
 3. #### 구매페이지
 
-<img src="https://user-images.githubusercontent.com/50823103/97002671-43ee9c00-1575-11eb-9a1c-ea5ece3e7da7.png" alt="image-20201023204208021" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97002673-43ee9c00-1575-11eb-87cb-ed50b7a79a34.png" alt="image-20201023204258140" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97002659-418c4200-1575-11eb-84d4-7f98d13e9376.png" alt="image-20201023204955470" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97003491-75b43280-1576-11eb-8544-5b0204877806.png" alt="image-20201023204848021" style="zoom:67%;" />
+<img src="https://user-images.githubusercontent.com/50823103/97002671-43ee9c00-1575-11eb-9a1c-ea5ece3e7da7.png" alt="image-20201023204208021" style="zoom: 50%;" /><img src="https://user-images.githubusercontent.com/50823103/97002673-43ee9c00-1575-11eb-87cb-ed50b7a79a34.png" alt="image-20201023204258140" style="zoom: 50%;" /><img src="https://user-images.githubusercontent.com/50823103/97002659-418c4200-1575-11eb-84d4-7f98d13e9376.png" alt="image-20201023204955470" style="zoom: 50%;" /><img src="https://user-images.githubusercontent.com/50823103/97003491-75b43280-1576-11eb-8544-5b0204877806.png" alt="image-20201023204848021" style="zoom: 33%;" />
 
-<img src="https://user-images.githubusercontent.com/50823103/97002660-418c4200-1575-11eb-86d7-d09a55ad61fc.png" alt="image-20201023205019439" style="zoom:67%;" /><img src="https://user-images.githubusercontent.com/50823103/97002676-44873280-1575-11eb-8e0e-c70a8d9244f0.png" alt="image-20201023204332162" style="zoom:67%;" />
+<img src="https://user-images.githubusercontent.com/50823103/97002660-418c4200-1575-11eb-86d7-d09a55ad61fc.png" alt="image-20201023205019439" style="zoom: 33%;" /><img src="https://user-images.githubusercontent.com/50823103/97002676-44873280-1575-11eb-8e0e-c70a8d9244f0.png" alt="image-20201023204332162" style="zoom: 50%;" />
 
 `구매페이지는 Linear Layout 안에 Grid Layout을 사용하여 배송정보 입력란을 제작.`
 
