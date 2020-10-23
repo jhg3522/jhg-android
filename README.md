@@ -8,7 +8,6 @@ Android Studio Java 언어 사용, Firebase Realtime Database, Storage 사용
 
 1. 상품 페이지
 
-<img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023202144858.png" alt="image-20201023202144858" style="zoom: 67%;" /><img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023202534396.png" alt="image-20201023202534396" style="zoom: 67%;" /><img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023204054332.png" alt="image-20201023204054332" style="zoom:67%;" />
 
 `상품 페이지는 Relative Layout으로 제작.`
 
@@ -42,7 +41,6 @@ Android Studio Java 언어 사용, Firebase Realtime Database, Storage 사용
 
 3. 구매페이지
 
-<img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023204208021.png" alt="image-20201023204208021" style="zoom:67%;" /><img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023204258140.png" alt="image-20201023204258140" style="zoom:66%;" /><img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023204332162.png" alt="image-20201023204332162" style="zoom:66%;" /><img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023204848021.png" alt="image-20201023204848021" style="zoom:67%;" />
 
 
 
@@ -60,9 +58,17 @@ HOME버튼을 누를시 BUY의 데이터 삭제하여 BUY 누를시 "선택된 �
 
 배송 정보를 모두 입력 후 BUY를 누를시 HOME화면으로 돌아가고 Database 초기화.
 
-<img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023204955470.png" alt="image-20201023204955470" style="zoom:67%;" /><img src="C:\Users\jhg35\AppData\Roaming\Typora\typora-user-images\image-20201023205019439.png" alt="image-20201023205019439" style="zoom:67%;" />
 
-
+![image-20201023204955470](https://user-images.githubusercontent.com/50823103/97002659-418c4200-1575-11eb-84d4-7f98d13e9376.png)
+![image-20201023205019439](https://user-images.githubusercontent.com/50823103/97002660-418c4200-1575-11eb-86d7-d09a55ad61fc.png)
+![image-20201023202356352](https://user-images.githubusercontent.com/50823103/97002661-4224d880-1575-11eb-92ea-26bf9caa61eb.png)
+![image-20201023203111902](https://user-images.githubusercontent.com/50823103/97002662-4224d880-1575-11eb-860d-695bd60fbffd.png)
+![image-20201023203202590](https://user-images.githubusercontent.com/50823103/97002664-42bd6f00-1575-11eb-8de0-ef494fabe788.png)
+![image-20201023203238233](https://user-images.githubusercontent.com/50823103/97002668-42bd6f00-1575-11eb-8658-dc1c8cf8fbfb.png)
+![image-20201023204054332](https://user-images.githubusercontent.com/50823103/97002670-43560580-1575-11eb-8ea7-fb0f87df01d2.png)
+![image-20201023204208021](https://user-images.githubusercontent.com/50823103/97002671-43ee9c00-1575-11eb-9a1c-ea5ece3e7da7.png)
+![image-20201023204258140](https://user-images.githubusercontent.com/50823103/97002673-43ee9c00-1575-11eb-87cb-ed50b7a79a34.png)
+![image-20201023204332162](https://user-images.githubusercontent.com/50823103/97002676-44873280-1575-11eb-8e0e-c70a8d9244f0.png)
 
 
 
