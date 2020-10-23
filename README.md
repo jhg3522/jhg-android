@@ -2,7 +2,20 @@
 
 ## Personal-Project
 
-Android Studio Java 언어 사용, Firebase Realtime Database, Storage 사용
+Android Studio 4.01 Java 언어 사용, Firebase Realtime Database, Storage 사용
+
+AVD는 Pixel 2 API 29 버전 사용, Gradle Version 6.1.1, Andorid Gradle Plugin Version 4.0.1
+
+```
+compileSdkVersion 29
+buildToolsVersion "30.0.2"
+
+minSdkVersion 16
+targetSdkVersion 29
+
+implementation 'com.google.firebase:firebase-database:19.5.0'
+implementation 'com.github.bumptech.glide:glide:4.9.0'
+```
 
 주요기능 - 1. 상품페이지 2. 장바구니 페이지 3. 구매페이지
 
