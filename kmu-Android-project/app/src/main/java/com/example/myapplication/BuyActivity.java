@@ -85,7 +85,7 @@ public class BuyActivity extends AppCompatActivity {
                     Log.d("total", String.valueOf(totalPrice));
                 }
                 listView.setAdapter(adapter);
-                textView.setText(String.valueOf(totalPrice));
+                textView.setText(String.valueOf(totalPrice) + " 원 ");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

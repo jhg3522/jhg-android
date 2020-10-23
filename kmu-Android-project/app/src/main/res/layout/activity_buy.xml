@@ -40,63 +40,70 @@
         android:layout_height="320dp" />
 
     <GridLayout
-        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:orientation="horizontal"
-        android:columnCount="2"
-        android:layout_marginLeft="10dp">
+        android:columnCount="2">
+
         <TextView
+            android:layout_marginTop="20dp"
             android:layout_columnSpan="2"
-            android:layout_height="20dp"
-            android:layout_width="match_parent"
+            android:layout_gravity="center"
             android:text="배송 정보"
-            android:textAlignment="center"
-            android:gravity="center_horizontal" />
+            android:textSize="20sp" />
         <TextView
-            android:layout_height="40dp"
-            android:layout_width="100dp"
-            android:text="성명"/>
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:text="성명      :"
+            android:textSize="17sp" />
         <EditText
-            android:inputType="textCapWords"
+            android:layout_width="250dp"
             android:id="@+id/buy_edit_name"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:importantForAutofill="no" />
+            android:inputType="textCapWords"/>
         <TextView
-            android:layout_height="40dp"
-            android:layout_width="100dp"
-            android:text="주소"/>
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:text="주소      :"
+            android:textSize="17sp" />
         <EditText
-            android:inputType="text"
+            android:layout_width="250dp"
             android:id="@+id/buy_edit_address"
-            android:layout_width="300dp"
-            android:layout_height="40dp" />
+            android:inputType="text" />
         <TextView
-            android:layout_height="40dp"
-            android:layout_width="100dp"
-            android:text="연락처"/>
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:text="연락처  :"
+            android:textSize="17sp" />
         <EditText
-            android:inputType="phone"
+            android:layout_width="250dp"
             android:id="@+id/buy_edit_phone"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            />
-        <TextView
-            android:layout_height="40dp"
-            android:layout_width="100dp"
-            android:text="총 금액"/>
-        <TextView
-            android:id="@+id/buy_all_cost"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            />
+            android:inputType="phone" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_marginTop="15dp"
+                android:text="총 금액   : "
+                android:textSize="17sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/buy_all_cost" />
+        </LinearLayout>
+
     </GridLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:layout_marginTop="20dp">
         <Button
             android:id="@+id/buy_home_btn"
             android:layout_width="100dp"
