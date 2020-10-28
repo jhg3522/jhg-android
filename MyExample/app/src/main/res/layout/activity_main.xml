@@ -7,12 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
+    <Button
+        android:id="@+id/btn_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음 페이지"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="오른쪽 위 메뉴 버튼을 누르세요"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/button1"

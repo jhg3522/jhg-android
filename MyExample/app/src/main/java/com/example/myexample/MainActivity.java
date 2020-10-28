@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,16 +25,25 @@ public class MainActivity extends AppCompatActivity {
     Button button1;
     ImageView ivBattery;
     EditText edtBattery;
+    Button btn_main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle("배경색 바꾸기");
-
+        btn_main = (Button) findViewById(R.id.btn_main);
         baseLayout = (LinearLayout) findViewById(R.id.baseLayout);
         button1= (Button) findViewById(R.id.button1);
         ivBattery = (ImageView) findViewById(R.id.ivBattery);
         edtBattery = (EditText) findViewById(R.id.edtBattery);
+
+        btn_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Second.class);
+                startActivity(intent);
+            }
+        });
     }
 
     BroadcastReceiver br = new BroadcastReceiver() {
